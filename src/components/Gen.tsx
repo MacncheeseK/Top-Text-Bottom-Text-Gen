@@ -11,7 +11,7 @@ const Gen = () => {
   };
 
   return (
-    <div className='p-9'>
+    <div className="p-9">
       <div className=" grid grid-cols-2 grid-flow-row  gap-12   ">
         <input
           type="text"
@@ -33,7 +33,15 @@ const Gen = () => {
           Get a new image 🖼️
         </button>
       </div>
-        <img src={meme.url} className=" rounded max-w-full mt-6 "/>
+      <div className="absolute">
+        <img src={meme.url} className=" rounded max-w-full mt-6 " />
+        <h2 className="absolute w-[80%] text-center left-[50%]  py-1 font-impact text-[2em] uppercase text-white top-8 -translate-x-[50%]  ">
+          Top Text
+        </h2>
+        <h2 className="absolute w-[80%] text-center left-[50%]  py-1 font-impact text-[2em] uppercase text-white bottom-4 -translate-x-[50%]">
+          Bottom Text
+        </h2>
+      </div>
     </div>
   );
 };
