@@ -2,6 +2,12 @@ import memesData from '../memesData';
 import { useState } from 'react';
 
 const Gen = () => {
+  interface eventTarget{
+    name: string;
+    value: string;
+    checked: boolean;
+    type: string;
+  };
   const [meme, setMeme] = useState({ topText: '', bottomText: '', url: '' });
   const [allMemeImages, setAllMemeImages] = useState(memesData);
 
@@ -13,10 +19,13 @@ const Gen = () => {
     setMeme((prevMeme) => ({ ...prevMeme, url: randomMeme.url}));
   };
 
-  const getText= (event:{ target:{} }) => {
-    const { name , value, checked, type } = event.target;
-    console.log( typeof name)
-    setMeme((prevMeme)=>({...prevMeme, [name]: type === 'checked' ? checked : value }));
+  const getText = (event: { target: eventTarget }) => {
+    const { name, value, checked, type } = event.target;
+    console.log(typeof value);
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: type === 'checked' ? checked : value,
+    }));
   };
 
 
