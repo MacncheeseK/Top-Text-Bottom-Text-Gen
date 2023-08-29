@@ -1,7 +1,7 @@
 import memesData from '../memesData';
 import { useState, useEffect} from 'react';
 
-const Gen = () => {
+const Gen = (props:{darkMode:boolean}) => {
   interface eventTarget{
     name: string;
     value: string;
@@ -37,7 +37,7 @@ useEffect(()=>{
 
 
   return (
-    <div className="p-9">
+    <div className={props.darkMode ? 'p-9 bg-gray-900 min-h-screen' : 'p-9'}>
       <div className=" grid grid-cols-2 grid-flow-row  gap-12   ">
         <input
           type="text"
